@@ -40,30 +40,31 @@ while ($file = readdir($dir)) {
 	}
 }
 
-// ejecuta los modulos al final
+// Ejecuta los modulos al final
 foreach ($end_ejec as $key => $value) {
-	$mode = "end";
+	$mode   = "end";
 	$config = $value;
 	include $value["path"];
 }
 
-if(
-	(
-		!empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
-		strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
-	) ||
-	$mode_no_ajax
-){
-	header('Cache-Control: no-cache, must-revalidate');
-	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-	header('Content-type: application/json; charset=utf-8');
+if ((count(get_included_files()) <= count($modules_cache)+1))
+	if(
+		(
+			!empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+			strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
+		) ||
+		$mode_no_ajax
+	){
+		header('Cache-Control: no-cache, must-revalidate');
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+		header('Content-type: application/json; charset=utf-8');
 
-	echo json_encode($out_ajax);
-}else{
-	header('Cache-Control: no-cache, must-revalidate');
-	header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-	header('Content-type: text/html; charset=utf-8');
+		echo json_encode($out_ajax);
+	} else {
+		header('Cache-Control: no-cache, must-revalidate');
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+		header('Content-type: text/html; charset=utf-8');
 
-	echo $out_html;
-}
+		echo $out_html;
+	}
 ?>
