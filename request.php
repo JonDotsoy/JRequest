@@ -10,6 +10,9 @@ $end_ejec         = array();// almacena los modulos que se deben ejecutar al fin
 $err_no_module    = true;// si es true muestra error al no encontrase ejecutro del modulo
 $modules_cache    = array();// almacena todos los modulos ejecutados
 
+// comprueba si existe directorio, si no existe lo crea.
+if (!file_exists($path_module)) if (!mkdir($path_module)) throw new Exception("Could not create directory for modules", 1);
+
 // ejecuta todo el listado de modulos y los ejecuta
 $dir = opendir($path_module);
 while ($file = readdir($dir)) {
