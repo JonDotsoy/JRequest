@@ -1,6 +1,35 @@
 JRequest
 ========
 
+JRequest es una aplicación PHP basada en módulos que controlan una salida requerida por AJAX o IFrames, con el objetivo de agilizar el desarrollo de las aplicaciones web e incorporar menos código PHP dentro de las aplicaciones web.
+
+Construir mi primer módulo JRequest
+-----------------------------------
+
+### 1.- Crear directorio del modulo
+
+Se debe crear el directorio dentro del directiro `modules/`.
+
+### 2.- Crear ejecutor main
+
+El directorio de nuestro modulo debe de contener el ejecutor `main.php`.
+
+### 3.- Crear salida AJAX o HTML
+
+Dependiendo del resultado requerido ocuparemos la variable de salida `$out_html` o `$out_ajax`.
+
+Para la salida AJAX se ocupara la variable `$out_ajax`.
+
+```
+$out_ajax['name'] = "Juan";
+```
+
+Para la salida HTML se ocupara la variable $out_html.
+
+```
+$out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
+```
+
 versiones
 ---------
 
