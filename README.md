@@ -33,7 +33,7 @@ $out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
 versiones
 ---------
 
-### v1.0
+### v1.0 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.0)
 
 - Gestiona y ejecuta módulos.
 - Crear carpeta módulos si esta no existe.
