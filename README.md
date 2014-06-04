@@ -33,6 +33,11 @@ $out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
 versiones
 ---------
 
+### v1.2 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.2)
+
+- Incorpora variable $jrequest la cual controla la versión de la aplicación.
+- Incorpora el método ver() dentro de la variable $jrequest que valida las versiones.
+
 ### v1.1 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.1)
 
 - Permite o denega el error entre los módulos con la variable de configuración `$show_err`.

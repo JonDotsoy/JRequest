@@ -9,7 +9,38 @@ $out_html         = ""; // Almacena la salida HTML
 $end_ejec         = array();// Almacena los módulos que se deben ejecutar al final
 $err_no_module    = true;// Si es true muestra error al no encontrase ejecutor del modulo
 $modules_cache    = array();// Almacena todos los módulos ejecutados
-$show_err         = false;
+$show_err         = false;// Permite o denega el error entre los módulos con la variable de configuración `$show_err`.
+// Mantiene las variables versiones de la aplicación. *remplazar al subir nueva versión. 
+$jrequest         = array(
+						"version"   =>"1.2.32",// Número de la versión en String
+						"n_version" =>1.232, // Número de la versión en integer
+						"name"      =>"jRequest", // Nombre de la aplicación
+						// Valida la versión. Si el digito es mayor al entregado retorna true.
+						"ver"       =>function($ver = null){
+							global $jrequest,$out_html,$out_ajax;
+							if ($ver == null) {
+								return $jrequest["name"]." v". $jrequest["version"];
+							} elseif (gettype($ver) == "string") {
+								$ver = $ver."";
+								$vern = 0;
+								if (strstr($ver, ".")) {
+									$indi1 = substr($ver,0,mb_strpos($ver, "."));
+									$indi2 = substr($ver,mb_strpos($ver, ".")+1);
+									$indi2 = str_replace(".", "", $indi2);
+									$vern = ($indi1.".".$indi2)+0;
+								} else {
+									$vern = $ver+0;
+								}
+								return $jrequest["ver"]($vern);
+							} elseif (gettype($ver) == "integer" || gettype($ver) == "double" || gettype($ver) == "float") {
+								if ($jrequest["n_version"] <=$ver) {
+									return true;
+								} else {
+									return false;
+								}
+							}
+						}
+					);
 
 // Comprueba si existe directorio, si no existe lo crea.
 if (!file_exists($path_module)) if (!mkdir($path_module)) throw new Exception("Could not create directory for modules", 1);
