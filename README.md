@@ -33,6 +33,10 @@ $out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
 versiones
 ---------
 
+### v1.1 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.1)
+
+- Permite o denega el error entre los módulos con la variable de configuración `$show_err`.
+
 ### v1.0 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.0)
 
 - Gestiona y ejecuta módulos.

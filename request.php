@@ -9,6 +9,7 @@ $out_html         = ""; // Almacena la salida HTML
 $end_ejec         = array();// Almacena los módulos que se deben ejecutar al final
 $err_no_module    = true;// Si es true muestra error al no encontrase ejecutor del modulo
 $modules_cache    = array();// Almacena todos los módulos ejecutados
+$show_err         = false;
 
 // Comprueba si existe directorio, si no existe lo crea.
 if (!file_exists($path_module)) if (!mkdir($path_module)) throw new Exception("Could not create directory for modules", 1);
@@ -25,7 +26,10 @@ while ($file = readdir($dir)) {
 			if (file_exists($path_file_coplet)) {
 				$config = array("path"=>$path_file_coplet);// Permite llevar al módulo una configuración que luego le servirá
 				// Ejecuta el modulo
-				include $path_file_coplet;
+				if ($show_err)
+					include($path_file_coplet);
+				else
+					@include($path_file_coplet);
 				// Detecta configuración 'end_ejec' si este es true almacena el modulo y lo ejecuta al final
 				if (isset($config["end_ejec"]) && $config["end_ejec"] == true) {
 					$end_ejec[] = $config;
