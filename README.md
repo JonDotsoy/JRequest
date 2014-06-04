@@ -47,6 +47,11 @@ versiones
 - Permite al módulo almacenar una memoria de configuración `config[]`.
 - Se tiene presente la variable `$mode`, para conocer el momento en el que es ejecutado el módulo.
 
+Compatibilidad
+--------------
+
+ - PHP 5.4.22.
+
 Licencia
 --------
 
