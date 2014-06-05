@@ -65,6 +65,7 @@ Compatibilidad
  - Chrome 35.0.1916.114 m.
  - Firefox 29.0.1.
  - Internet Explorer 11.0.9600.16521.
+ - Opera 21.0.1432.57.
 
 Licencia
 --------
