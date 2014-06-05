@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="/JRequest/request.min.js"></script>
+		<title>Actualiza la hora.</title>
+	</head>
+	<body>
+		La hora es: <span id="clock"></span><br>
+		<a id="uploadhora" href="#actuliza">Actualizar</a><br>
+		<hr>
+		<h2>Desde JRequest.php</h2>
+		<p>Para funcionar correctamente requiere crear el modulo <code>'Genera Hora'</code>.</p>
+		<pre><code>&lt;?php 
+
+	$out_ajax["clock"] = new DateTime();
+
+?&gt;</code></pre>
+		<hr>
+		<h2>Desde la front-end</h2>
+		<p>Esta aplicación utiliza el siguiente script para realizar su funcionamiento.</p>
+		<pre>&lt;script&gt;
+	$("#uploadhora").click(function(){
+		request(function(res,err){
+			$("#clock").text(res.clock.date);
+		});
+	});
+&lt;/script&gt;</pre>
+		<script>
+			$("#uploadhora").click(function(){
+				request(function(res,err){
+					$("#clock").text(res.clock.date);
+				});
+			});
+		</script>
+	</body>
+</html>

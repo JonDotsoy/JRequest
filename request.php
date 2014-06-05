@@ -1,5 +1,16 @@
 <?php
 
+/**
+  * JRequest es una aplicación PHP basada en módulos que controlan una salida
+  * requerida por AJAX o IFrames, con el objetivo de agilizar el desarrollo de las
+  * aplicaciones web e incorporar menos código PHP dentro de las aplicaciones web.
+  *
+  * URL: https://github.com/alfa30/JRequest
+  *
+  * @author Jonathan Delgado Zamorano <jonad.correo@gmail.com>
+  * 
+  */
+
 // Configuración app
 $path_module      = "modules/";// Almacena la ruta de los módulos
 $path_module_ejec = "main.php";// Archivo que es ejecutado por modulo
@@ -12,8 +23,8 @@ $modules_cache    = array();// Almacena todos los módulos ejecutados
 $show_err         = false;// Permite o denega el error entre los módulos con la variable de configuración `$show_err`.
 // Mantiene las variables versiones de la aplicación. *remplazar al subir nueva versión. 
 $jrequest         = array(
-						"version"   =>"1.2.32",// Número de la versión en String
-						"n_version" =>1.232, // Número de la versión en integer
+						"version"   =>"1.6.32",// Número de la versión en String
+						"n_version" =>1.632, // Número de la versión en integer
 						"name"      =>"jRequest", // Nombre de la aplicación
 						// Valida la versión. Si el digito es mayor al entregado retorna true.
 						"ver"       =>function($ver = null){

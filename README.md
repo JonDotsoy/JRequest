@@ -30,8 +30,14 @@ Para la salida HTML se ocupara la variable $out_html.
 $out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
 ```
 
-versiones
+Versiones
 ---------
+
+### v1.6 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.6)
+
+- Incluye una aplicación JavaScript que incorpora el método `request()` para realizar llamadas al servidor.
+- Disminuye el tiempo de carga de `request.min.js`.
+- Incorpora carpeta Demo que contiene ejemplos de la aplicación.
 
 ### v1.2 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.2)
 
