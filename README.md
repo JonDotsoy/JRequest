@@ -64,6 +64,7 @@ Compatibilidad
  - PHP 5.4.22.
  - Chrome 35.0.1916.114 m.
  - Firefox 29.0.1.
+ - Internet Explorer 11.0.9600.16521.
 
 Licencia
 --------
