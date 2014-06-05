@@ -62,6 +62,7 @@ Compatibilidad
 --------------
 
  - PHP 5.4.22.
+ - Chrome 35.0.1916.114 m
 
 Licencia
 --------
