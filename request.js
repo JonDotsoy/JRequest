@@ -1,5 +1,5 @@
 /**!
-  * jRequest.js Javascript Library v1.6.32
+  * jRequest.js Javascript Library v1.6.35
   * https://github.com/alfa30/JRequest
   * 
   * Copyright 2014 jonad.in. and other contributors
@@ -28,28 +28,39 @@
                 cof[key] = arg1[key];
             }
         }
+
+        /* Si la variable de configuracion "recursive" es true, no envia el request si no que lo almacena para ejecutarlo en cada request. */
         if (cof.recursive) {
             memory_proces.push({"count": 0,"fn": fn,"req": req,"cof": cof});
+        } else {
+            w.request_direct(cof, req, fn);
         }
-        w.request_direct(cof, req, fn);
     };
     w.request_direct = function(cof, req, fn) {
         var res = {};
         var err = null;
         var req_send = req;
+        /* remplasa las variables request que se alacenaron en la memoria de procesos */
         for (key in memory_proces) {
-            if (memory_proces[key].cof.method == cof.method) {
+            /* Si la memoria indica que el mentod es igual al utilizado actualmente, se procede a remplazar las variables request */
+            if (memory_proces[key].cof.method.toUpperCase() == cof.method.toUpperCase()) {
                 for (rkey in memory_proces[key].req) {
                     req_send[rkey] = memory_proces[key].req[rkey];
                 }
             }
-        }
-        ;
+        };
         jq.ajax({"dataType": "json","url": cof.path_jrequest,"type": cof.method,"data": req}).success(function(dt) {
             res = dt;
         }).fail(function(gerr) {
             err = gerr;
         }).complete(function() {
+            /* Recorreo la memoria de procesos */
+            for (key in memory_proces) {
+                /* Si el metodo de request es igual al acutal se ejecuta la funcion o si el proceso en la memoria es "REQUEST" */
+                if (memory_proces[key].cof.method.toUpperCase() == cof.method.toUpperCase() || memory_proces[key].cof.method.toUpperCase() == "REQUEST") {
+                    memory_proces[key].fn(res, err);
+                };
+            }
             fn(res, err);
         });
     };
@@ -57,8 +68,8 @@
         return w.request.version.ver(ver);
     };
     w.request.version.Name = "jRequest";
-    w.request.version.Version = "1.6.32";
-    w.request.version.N_Version = 1.632;
+    w.request.version.Version = "1.6.35";
+    w.request.version.N_Version = 1.635;
     w.request.version.ver = function(ver) {
         if (!ver) {
             return w.request.version.Name + " v" + w.request.version.Version;
