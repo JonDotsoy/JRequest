@@ -33,7 +33,7 @@ $out_html .= "<dl><dt>Nombre</dt><dd>Juan</dd></dl>";
 Versiones
 ---------
 
-### v1.6 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.6.35)
+### v1.6 [Descargar](https://github.com/alfa30/JRequest/releases/tag/v1.6.36)
 
 - Incluye una aplicación JavaScript que incorpora el método `request()` para realizar llamadas al servidor.
 - Disminuye el tiempo de carga de `request.min.js`.
