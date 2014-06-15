@@ -1,0 +1,34 @@
+{
+  "name": "JRequest",
+  "version": "1.6.36",
+  "description": "JRequest es una aplicación PHP basada en módulos que controlan una salida requerida por AJAX o IFrames, con el objetivo de agilizar el desarrollo de las aplicaciones web e incorporar menos código PHP dentro de las aplicaciones web.",
+  "main": "request.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alfa30/JRequest.git"
+  },
+  "keywords": [
+    "request",
+    "javascript",
+    "AJAX",
+    "PHP",
+    "HTML",
+    "NodeJS"
+  ],
+  "dependencies": {
+    "grunt"                 : "latest",
+    "grunt-cli"             : "latest",
+    "grunt-contrib-watch"   : "latest",
+    "grunt-contrib-uglify"  : "latest",
+    "grunt-contrib-compress": "latest"
+  },
+  "author": "Jonathan Delgado Zamorano",
+  "license": "Creative Commons Atribución-NoComercial-CompartirIgual 4.0",
+  "bugs": {
+    "url": "https://github.com/alfa30/JRequest/issues"
+  },
+  "homepage": "https://github.com/alfa30/JRequest"
+}
