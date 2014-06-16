@@ -1,0 +1,42 @@
+{
+  "name"      : "jRequest-pages",
+  "version"   : "0.1.0",
+  "main"      : "index.js",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/alfa30/JRequest.git"
+  },
+  "keywords": [
+    "Web",
+    "html",
+    "javascript",
+    "css",
+    "jRequest"
+  ],
+  "author" : "joathan Delgado",
+  "license": "Creative Commons Atribución-NoComercial-CompartirIgual 4.0",
+  "bugs"   : {
+    "url": "https://github.com/alfa30/JRequest/issues"
+  },
+  "homepage": "https://github.com/alfa30/JRequest",
+  "dependencies": {
+    "jade"                 : "latest",
+    "bootstrap"            : "latest",
+    "animate.css"          : "latest",
+    "font-awesome"         : "latest",
+    "jquery"               : "latest",
+    "less"                 : "latest",
+    "grunt"                : "latest",
+    "grunt-cli"            : "latest",
+    "grunt-contrib-jade"   : "latest",
+    "grunt-contrib-less"   : "latest",
+    "grunt-contrib-watch"  : "latest",
+    "grunt-contrib-uglify" : "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-copy"   : "latest"
+    },
+  "devDependencies": {},
+  "scripts"        : {
+    "test": "none"
+  }
+}
