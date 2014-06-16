@@ -19,6 +19,7 @@
     "NodeJS"
   ],
   "dependencies": {
+  	"jquery"                : "latest",
     "grunt"                 : "latest",
     "grunt-cli"             : "latest",
     "grunt-contrib-watch"   : "latest",
